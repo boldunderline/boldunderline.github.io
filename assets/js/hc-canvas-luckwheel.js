@@ -24,7 +24,8 @@
     cssSupport = {};
 
   // load sound effect
-  let drumRoll = new Audio("./assets/audio/drum-roll.mp3");
+  // let drumRoll = new Audio("./assets/audio/drum-roll.mp3");
+  let ticking = new Audio("./assets/audio/ticking.mp3");
   let smallCrowd = new Audio("./assets/audio/small-crowd.mp3");
   let winner = new Audio("./assets/audio/winner.mp3");
 
@@ -179,7 +180,8 @@
           return;
         }
 
-        drumRoll.play();
+        // drumRoll.play();
+        ticking.play();
 
         addClass(btn, "disabled");
 
@@ -202,12 +204,14 @@
   function eGot() {
 
     // sound effect
-    drumRoll.pause()
+    // drumRoll.pause()
+    ticking.pause()
 
     smallCrowd.play();
     winner.play();
 
-    drumRoll.currentTime = 0;
+    // drumRoll.currentTime = 0;
+    ticking.currentTime = 0;
 
     if (optsPrize.chances == null) {
       return fnGotBack(null);
