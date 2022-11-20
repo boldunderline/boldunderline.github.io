@@ -7,8 +7,12 @@
 
 .hc-luckywheel {
   position: relative;
-  width: 80vh; /*Change this when change size*/ /* 500px */
-  height: 80vh; /*Change this when change size*/ /* 500px */
+  width: min(80vw, 80vh);
+  /*Change this when change size*/
+  /* 500px */
+  height: min(80vw, 80vh);
+  /*Change this when change size*/
+  /* 500px */
   border-radius: 50%;
   border: 16px solid #c5190a;
   /* box-shadow: 0 2px 3px #333, 0 0 2px #000; */
@@ -34,8 +38,8 @@
   border-radius: inherit;
   background-clip: padding-box;
   background-color: #216cc0;
-  -webkit-transition: transform 6s ease;
-  transition: transform 6s ease;
+  -webkit-transition: transform 15s cubic-bezier(0, .75, 0, 1);
+  transition: transform 15s cubic-bezier(0, .75, 0, 1);
 }
 
 .hc-luckywheel-container canvas {
@@ -71,23 +75,38 @@
   /* width: 50px; */
   margin: 0 auto;
   text-align: center;
-  -webkit-transform-origin: 50% 40vh; /*Change this when change size*/ /* 50% 250px */ /* second part is half of hc-luckywheel */
-  -ms-transform-origin: 50% 40vh; /*Change this when change size*/ /* 50% 250px */ /* second part is half of hc-luckywheel */
-  transform-origin: 50% 40vh; /*Change this when change size*/ /* 50% 250px */ /* second part is half of hc-luckywheel */
-} 
+  -webkit-transform-origin: 50% min(40vw, 40vh);
+  /*Change this when change size*/
+  /* 50% 250px */
+  /* second part is half of hc-luckywheel */
+  -ms-transform-origin: 50% min(40vw, 40vh);
+  /*Change this when change size*/
+  /* 50% 250px */
+  /* second part is half of hc-luckywheel */
+  transform-origin: 50% min(40vw, 40vh);
+  /*Change this when change size*/
+  /* 50% 250px */
+  /* second part is half of hc-luckywheel */
+}
 
 .hc-luckywheel-item img {
   position: relative;
   top: -20px;
   left: 0px;
-  width: 100px; /*Change this when change size*/
-  height: 100px; /*Change this when change size*/
-} 
+  width: 100px;
+  /*Change this when change size*/
+  height: 100px;
+  /*Change this when change size*/
+}
 
 .hc-luckywheel-btn {
   position: absolute;
-  left: 50%; /*Change this when change size*/ /* 210px */
-  top: 50%; /*Change this when change size*/ /* 210px */
+  left: 50%;
+  /*Change this when change size*/
+  /* 210px */
+  top: 50%;
+  /*Change this when change size*/
+  /* 210px */
   z-index: 3;
   width: 80px;
   height: 80px;
@@ -136,7 +155,9 @@
 
 /* custom styles */
 .hc-luckywheel-item span {
-  padding-top: 40vh; /* 245px */ /* half of hc-luckywheel size */
+  padding-top: min(40vw, 40vh);
+  /* 245px */
+  /* half of hc-luckywheel size */
 }
 
 .hc-luckywheel-btn span {

@@ -42,3 +42,28 @@ body {
 .custom-theme {
   background-color: #022575;
 }
+
+
+@media (max-width: 576px) {
+  img[src*="assets/logo-"][height="46px"] {
+    height: 30px;
+  }
+  img[src*="assets/logo-"][height="56px"] {
+    height: 40px;
+  }
+  img[src*="assets/logo-"][height="100px"] {
+    height: 60px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .container-fluid > img[src*="assets/logo-"][height="46px"] {
+    height: 35px;
+  }
+  img[src*="assets/logo-"][height="56px"] {
+    height: 45px;
+  }
+  img[src*="assets/logo-"][height="100px"] {
+    height: 80px;
+  }
+}
