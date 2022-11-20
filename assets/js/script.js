@@ -280,7 +280,7 @@
   // luckywheel
   let isPercentage = false;
 
-  // load file from contohdata.xlsx
+  // load file from localStorage or load sample data in contohdata.xlsx
   function loadListNama(path = "./contohdata.xlsx") {
     return new Promise(function (resolve, reject) {
 
@@ -299,16 +299,17 @@
             nik: dl["NIK"] ?? dl["Nik"] ?? dl["nik"],
             number: 1,
           }
-        })
-        resolve(fileData)
+        });
+
+        resolve(fileData);
       } else {
         // reject("Mohon Upload Data Peserta");
 
-        // load using xhr
+        // load sample data
         let xhr = new XMLHttpRequest();
         xhr.onload = function () {
 
-          /* convert data to binary string */
+          // convert data to binary string
           let arraybuffer = xhr.response;
           let dataUint8Arr = new Uint8Array(arraybuffer);
           let arr = new Array();
@@ -328,10 +329,9 @@
             dataL = dataList;
           });
 
-          console.log(dataL)
           const dataListJSON = JSON.stringify(dataL);
-          localStorage.setItem("datalist", dataListJSON)
-          // localStorage.removeItem("winnerlist");
+          localStorage.setItem("datalist", dataListJSON);
+          localStorage.removeItem("winnerlist");
 
           const fileData = dataL.map((dl) => {
             return {
@@ -344,30 +344,8 @@
           spinBtn.classList.remove("disabled");
 
           resolve(fileData);
-
-
-
-          // if (xhr.readyState == 4) {
-          //   // The request is done; did it work?
-          //   if (xhr.status == 200) {
-          //     // Yes, use `xhr.responseText` to resolve the promise
-          //     // console.log(xhr)
-          //     // console.log(xhr.response)
-          //     // console.log(xhr.responseText)
-          //     // const fileData = xhr.responseText.replaceAll("\r", "").split("\n").map((namaPeserta) => {
-          //     //   return {
-          //     //     text: namaPeserta,
-          //     //     number: 1,
-          //     //   }
-          //     // });
-
-          //     
-          //   } else {
-          //     // No, reject the promise
-          //     reject(xhr);
-          //   }
-          // }
         };
+        
         xhr.open("GET", path);
         xhr.responseType = "arraybuffer";
         xhr.send();

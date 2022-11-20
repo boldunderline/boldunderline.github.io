@@ -177,11 +177,11 @@
 }
 
 .fs-2vh {
-  font-size: 2vh;
+  font-size: min(2vh, 2vw);
 }
 
 .fs-1\.2vh {
-  font-size: 1.2vh;
+  font-size: min(1.2vh, 1.2vw);
 }
 
 /* confetti */
