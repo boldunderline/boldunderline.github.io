@@ -76,8 +76,6 @@
       };
 
       reader.readAsBinaryString(file);
-
-
     }
     // end of save data to local storage
 
@@ -282,48 +280,98 @@
   // luckywheel
   let isPercentage = false;
 
-  // load file from listnama.txt
-  function loadListNama(path) {
+  // load file from contohdata.xlsx
+  function loadListNama(path = "./contohdata.xlsx") {
     return new Promise(function (resolve, reject) {
 
       spinBtn.classList.add("disabled");
 
       // load from localStorage
-      const data = localStorage.getItem("datalist") !== null || typeof localStorage.getItem("datalist") === "string" ? JSON.parse(localStorage.getItem("datalist")) : reject("Mohon Upload Data Peserta")
 
-      data.length > 0 && spinBtn.classList.remove("disabled");
+      if (localStorage.getItem("datalist") !== null || typeof localStorage.getItem("datalist") === "string") {
+        let data = JSON.parse(localStorage.getItem("datalist"));
 
-      const fileData = data.map((dl) => {
-        return {
-          text: dl["NAMA"] ?? dl["Nama"] ?? dl["nama"] ?? dl["NAME"] ?? dl["Name"] ?? dl["name"],
-          nik: dl["NIK"] ?? dl["Nik"] ?? dl["nik"],
-          number: 1,
-        }
-      })
-      resolve(fileData)
+        data.length > 0 && spinBtn.classList.remove("disabled");
 
-      // load using xhr
-      // let xhr = new XMLHttpRequest();
-      // xhr.onreadystatechange = function () {
-      //   if (xhr.readyState == 4) {
-      //     // The request is done; did it work?
-      //     if (xhr.status == 200) {
-      //       // Yes, use `xhr.responseText` to resolve the promise
-      //       const fileData = xhr.responseText.replaceAll("\r", "").split("\n").map((namaPeserta) => {
-      //         return {
-      //           text: namaPeserta,
-      //           number: 1,
-      //         }
-      //       });
-      //       resolve(fileData);
-      //     } else {
-      //       // No, reject the promise
-      //       reject(xhr);
-      //     }
-      //   }
-      // };
-      // xhr.open("GET", path);
-      // xhr.send();
+        const fileData = data.map((dl) => {
+          return {
+            text: dl["NAMA"] ?? dl["Nama"] ?? dl["nama"] ?? dl["NAME"] ?? dl["Name"] ?? dl["name"],
+            nik: dl["NIK"] ?? dl["Nik"] ?? dl["nik"],
+            number: 1,
+          }
+        })
+        resolve(fileData)
+      } else {
+        // reject("Mohon Upload Data Peserta");
+
+        // load using xhr
+        let xhr = new XMLHttpRequest();
+        xhr.onload = function () {
+
+          /* convert data to binary string */
+          let arraybuffer = xhr.response;
+          let dataUint8Arr = new Uint8Array(arraybuffer);
+          let arr = new Array();
+          for (let i = 0; i != dataUint8Arr.length; ++i) {
+            arr[i] = String.fromCharCode(dataUint8Arr[i])
+          };
+          let bstr = arr.join("");
+
+          const workbook = XLSX.read(bstr, {
+            type: "binary"
+          });
+
+          let dataL = [];
+
+          workbook.SheetNames.forEach(function (sheetName) {
+            const dataList = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+            dataL = dataList;
+          });
+
+          console.log(dataL)
+          const dataListJSON = JSON.stringify(dataL);
+          localStorage.setItem("datalist", dataListJSON)
+          // localStorage.removeItem("winnerlist");
+
+          const fileData = dataL.map((dl) => {
+            return {
+              text: dl["NAMA"] ?? dl["Nama"] ?? dl["nama"] ?? dl["NAME"] ?? dl["Name"] ?? dl["name"],
+              nik: dl["NIK"] ?? dl["Nik"] ?? dl["nik"],
+              number: 1,
+            }
+          })
+
+          spinBtn.classList.remove("disabled");
+
+          resolve(fileData);
+
+
+
+          // if (xhr.readyState == 4) {
+          //   // The request is done; did it work?
+          //   if (xhr.status == 200) {
+          //     // Yes, use `xhr.responseText` to resolve the promise
+          //     // console.log(xhr)
+          //     // console.log(xhr.response)
+          //     // console.log(xhr.responseText)
+          //     // const fileData = xhr.responseText.replaceAll("\r", "").split("\n").map((namaPeserta) => {
+          //     //   return {
+          //     //     text: namaPeserta,
+          //     //     number: 1,
+          //     //   }
+          //     // });
+
+          //     
+          //   } else {
+          //     // No, reject the promise
+          //     reject(xhr);
+          //   }
+          // }
+        };
+        xhr.open("GET", path);
+        xhr.responseType = "arraybuffer";
+        xhr.send();
+      }
     });
   }
 
