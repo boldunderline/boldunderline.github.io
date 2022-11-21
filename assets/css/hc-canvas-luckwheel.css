@@ -40,6 +40,8 @@
   background-color: #216cc0;
   -webkit-transition: transform 15s cubic-bezier(0, .75, 0, 1);
   transition: transform 15s cubic-bezier(0, .75, 0, 1);
+  -webkit-transition: transform 6s ease-out;
+  transition: transform 6s ease-out;
 }
 
 .hc-luckywheel-container canvas {
