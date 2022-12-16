@@ -89,7 +89,7 @@
         <form id="configForm">
           <div class="m-2 mb-4">
             <input type="file" class="form-control" name="datalist" id="datalist" accept=".xls, .xlsx, .csv">
-            <p class="form-text">Accept excel ( .xlx | .xlsx ), or .csv file</p>
+            <p class="form-text">Accept excel ( .xls | .xlsx ), or .csv file</p>
           </div>
           <div>
             <button type="submit" class="btn btn-primary">Save</button>
