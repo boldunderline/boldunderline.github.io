@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+  <link rel="manifest" href="./site.webmanifest" />
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#da532c" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <script>
+    // register service worker
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js", { scope: "./" })
+    }
+  </script>
+
+  <title>Lucky Wheel - Temu Responden BI Tahun 2022</title>
+
+  <!-- Font Open Sans -->
+  <link rel="stylesheet" href="./assets/css/font-open-sans.css" />
+
+  <!-- bootstrap -->
+  <link href="./assets/css/dist/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- animate.css -->
+  <link rel="stylesheet" href="./assets/css/dist/animate.min.css" />
+
+  <link rel="stylesheet" href="./assets/css/typo/typo.css" />
+
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./assets/css/hc-canvas-luckwheel.css" />
+</head>
+
+<body>
+  <canvas id="confetti"></canvas>
+
+  <header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-xl navbar-dark fixed-top bg-primary custom-bg-theme" style="min-height: 62px;">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="./index.html" style="padding: 0;">
+        </a> -->
+        <div
+          class="position-absolute d-flex align-items-center"
+          style="height: 62px; top: 0; left: 50%; transform: translate(-50%, 0);"
+        >
+          <img src="./assets/logo-bi-putih.png" alt="" height="46px" class="me-3">
+          <img src="./assets/logo-temu-responden-tahun-2022.png" alt="" height="46px" class="me-3">
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#upload-data">
+                Upload Data
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#winner-list">
+                Winners
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#participant-list">
+                Participants
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-danger" href="#delete">
+                Delete
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reset">
+                Reset
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="position-absolute d-flex align-items-center"
+          style="height: 62px; top: 0; right: 0.75rem;"
+        >
+          <ul class="navbar-nav">
+            <li class="ms-auto nav-item">
+              <a class="nav-link" href="#fullscreen">
+                Fullscreen
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <main class="flex-shrink-0">
+    <div class="bg">
+      <div class="d-flex align-items-center container-fluid pt-2">
+        <img src="./assets/logo-g20-indonesia-putih.png" alt="" height="100px">
+        <img src="./assets/logo-gnpip-putih.png" alt="" height="56px" class="ms-0 ms-md-2 me-auto">
+        <img src="./assets/logo-cbp-rupiah-putih.png" alt="" height="46px" class="me-2 me-md-4">
+        <img src="./assets/logo-qris-15-juta-pengguna-putih.png" alt="" height="46px">
+      </div>
+      <div class="wrapper typo" id="wrapper">
+        <section id="luckywheel" class="hc-luckywheel">
+          <div class="hc-luckywheel-container">
+            <canvas class="hc-luckywheel-canvas" width="500px" height="500px">Lucky Wheel</canvas>
+          </div>
+          <a class="hc-luckywheel-btn" href="javascript:;">
+            <span>Spin</span>
+          </a>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- bootstrap -->
+  <script src="./assets/js/dist/bootstrap.bundle.min.js"></script>
+
+  <!-- SheetJS -->
+  <script src="./assets/js/dist/xlsx.full.min.js"></script>
+
+  <!-- sweet alert 2 -->
+  <script src="./assets/js/dist/sweetalert2@11.js"></script>
+  <!-- confetti -->
+  <script src="./assets/js/confetti.js"></script>
+  <!-- hc lucky wheel -->
+  <script src="./assets/js/hc-canvas-luckwheel.js"></script>
+  <!-- init -->
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

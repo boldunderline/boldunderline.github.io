@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laporan Pajak Kefi</title>
+
+  <!-- Bootstrap css -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="./dist/css/bootstrap.min.css" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body style="background: #eeeeee;">
+  <header class="container my-3">
+    <h1>Laporan Pajak Kefi</h1>
+  </header>
+
+  <div class="container my-3 coming-soon">
+    <h2>Metode 1</h2>
+    <p>Pilih bulan, lalu klik "Buat Laporan"</p>
+    <form id="getReport" class="upload-form my-4">
+      <div class="row">
+        <div class="col-12 col-md mb-3 mb-md-0 input-group custom-file-button">
+          <!-- <label for="mokaFileInput" class="input-group-text">Upload file</label> -->
+          <!-- <input type="file" class="form-control" name="mokaFileInput" id="mokaFileInput" accept="text/csv, application/zip" required> -->
+          <select id="month" class="form-select" aria-label="">
+            <option selected>Pilih Bulan</option>
+            <option value="1">Januari</option>
+            <option value="2">Februari</option>
+            <option value="3">Maret</option>
+            <option value="4">April</option>
+            <option value="5">Mei</option>
+            <option value="6">Juni</option>
+            <option value="7">Juli</option>
+            <option value="8">Agustus</option>
+            <option value="9">September</option>
+            <option value="10">Oktober</option>
+            <option value="11">November</option>
+            <option value="12">Desember</option>
+          </select>
+          <input type="number" name="year" id="year" class="form-control" placeholder="Pilih Tahun">
+        </div>
+        <div class="col-12 col-md-3">
+          <button type="submit" class="submit-btn btn btn-primary w-100">Buat Laporan</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <div class="container">
+    <hr>
+  </div>
+
+  <div class="container my-3">
+
+    <h2>Metode 2</h2>
+    <p>Upload laporan transaksi (tipe file .zip atau .csv) yang didownload dari moka lalu klik "Buat Laporan"</p>
+    <form id="uploadMokaCSVForm" class="upload-form my-4">
+      <div class="row">
+        <div class="col-12 col-md mb-3 mb-md-0 input-group custom-file-button">
+          <label for="mokaFileInput" class="input-group-text">Upload file</label>
+          <input type="file" class="form-control" name="mokaFileInput" id="mokaFileInput"
+            accept="text/csv, application/zip" required>
+        </div>
+        <div class="col-12 col-md-3">
+          <button type="submit" class="submit-btn btn btn-primary w-100">Buat Laporan</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="container">
+    <hr>
+  </div>
+
+  <div class="container my-3">
+    <div id="hasil-pdf" class="my-4">
+      <div class="mb-4"></div>
+      <div class="btn-wrapper mb-2 d-flex justify-content-between gap-2 flex-wrap"></div>
+      <div class="iframe-wrapper"></div>
+    </div>
+
+    <div class="separator"></div>
+
+    <div id="hasil-html" class="my-4">
+      <div class="mb-4"></div>
+      <div class="html-wrapper bg-white overflow-auto"></div>
+    </div>
+  </div>
+
+  <!-- styling -->
+  <!-- Popper js for bootstrap alert component, dll -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script> -->
+  <script src="./dist/js/popper.min.js"></script>
+  <!-- Bootstrap -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script> -->
+  <script src="./dist/js/bootstrap.min.js"></script>
+
+  <!-- generating pdf from html -->
+  <!-- jspdf -->
+  <!-- <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script> -->
+  <script src="./dist/js/jspdf.umd.min.js"></script>
+  <!-- html2canvas -->
+  <!-- <script src="https://unpkg.com/html2canvas@1.4.1/dist/html2canvas.min.js"></script> -->
+  <script src="./dist/js/html2canvas.min.js"></script>
+  <!-- dompurify -->
+  <!-- <script src="https://unpkg.com/dompurify@2.4.1/dist/purify.min.js"></script> -->
+  <script src="./dist/js/purify.min.js"></script>
+
+  <!-- parsing csv -->
+  <!-- d3 js -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/d3@7"></script> -->
+  <script src="./dist/js/d3.v7.min.js"></script>
+
+  <!-- parsing zip -->
+  <!-- jszip -->
+  <!-- <script src="https://unpkg.com/jszip@3.10.1/dist/jszip.min.js"></script> -->
+  <script src="./dist/js/jszip.min.js"></script>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>

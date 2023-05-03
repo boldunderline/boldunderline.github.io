@@ -1,0 +1,620 @@
+<body>
+  <div class="">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .wrapper {
+        padding: 1cm 2cm;
+        font-size: 12pt;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-family: initial;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 18pt;
+        text-align: center;
+        margin-bottom: 1.2rem;
+      }
+
+      .info-wrapper {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1.2rem;
+      }
+
+      .info-wrapper>div {
+        display: flex;
+      }
+
+      .info-wrapper>div>p {
+        line-height: 1.2;
+      }
+
+      .info-wrapper>div>p:first-child {
+        width: 100px;
+      }
+
+      .info-wrapper>div>p:nth-child(2) {
+        width: 15px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      td,
+      th {
+        padding: 2px 8px;
+        border: 1px solid;
+      }
+
+      td {
+        font-size: 11pt;
+      }
+
+      td:not(:first-child) {
+        text-align: right;
+      }
+
+      tbody tr:last-child {
+        font-weight: bold;
+      }
+
+      .wrapper td .currency-number {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .sign-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .sign-wrapper p:last-child {
+        margin-top: 100px;
+      }
+
+      .sign-wrapper p:last-child span {
+        display: inline-block;
+        width: 170px;
+      }
+    </style>
+
+    <div class="wrapper">
+
+      <h1>Laporan Penjualan Harian</h1>
+
+      <div class="info-wrapper">
+        <div>
+          <p>NPWPD</p>
+          <p>:</p>
+          <p>1.0012345.12.01</p>
+        </div>
+        <div>
+          <p>Nama Usaha</p>
+          <p>:</p>
+          <p>Kefi</p>
+        </div>
+        <div>
+          <p>Alamat</p>
+          <p>:</p>
+          <p>Jl. Abdul Hakim</p>
+        </div>
+        <div>
+          <p>Masa Pajak</p>
+          <p>:</p>
+          <p>1 September s/d 30 September 2022</p>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Tanggal
+            </th>
+            <th>
+              Total Penjualan Harian
+            </th>
+            <th>
+              Pajak Restoran 10 %
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              1 September 2022
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>123.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>12.300</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              2 September 2022
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>3 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>4 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>5 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>6 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>7 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>8 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>9 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>10 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>11 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>12 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>13 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>14 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>15 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>16 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>17 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>18 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>19 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>20 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>21 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>22 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>23 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>24 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>25 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>26 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>27 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>28 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>29 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>30 September 2022</td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>456.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>45.600</span>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Total
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>579.000</span>
+              </div>
+            </td>
+            <td>
+              <div class="currency-number">
+                <span>Rp</span>
+                <span>57.900</span>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="sign-wrapper">
+        <p>Medan, .........................................</p>
+        <p>Henny Pandiangan</p>
+      </div>
+
+    </div>
+  </div>
+</body>
